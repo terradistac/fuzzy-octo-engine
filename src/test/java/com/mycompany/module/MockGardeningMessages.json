@@ -1,0 +1,26 @@
+{
+    "testLocalizations": [
+        {
+            "english": {
+                "messages": [
+                    {
+                        "greeting": "Welcome. Which plant would you like to grow?"
+                    },
+                    {
+                        "actionPrompt": "What would you like to do next?"
+                    }
+                ],
+                "plants": [
+                    {
+                        "key": 1,
+                        "name": "petunia"
+                    },
+                    {
+                        "key": 2,
+                        "name": "daisy"
+                    }
+                ]
+            }
+        }
+    ]
+}
