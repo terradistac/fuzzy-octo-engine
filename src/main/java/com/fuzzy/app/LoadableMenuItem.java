@@ -1,7 +1,8 @@
-package com.mycompany.app;
+package com.fuzzy.app;
 
 import java.util.HashMap;
-import com.mycompany.module.Module;
+
+import com.fuzzy.module.Module;
 
 public class LoadableMenuItem implements Loadable {
 

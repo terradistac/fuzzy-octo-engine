@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.fuzzy.app;
 
 public enum MenuAttributes {
     USER_MESSAGE

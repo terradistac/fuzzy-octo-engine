@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.fuzzy.app;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.mycompany.module.Module;
+import com.fuzzy.module.Module;
 
 import org.easymock.EasyMock;
 

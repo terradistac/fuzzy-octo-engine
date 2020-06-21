@@ -1,4 +1,4 @@
-package com.mycompany.module;
+package com.fuzzy.module;
 
 public class GardeningModule implements Module {
 

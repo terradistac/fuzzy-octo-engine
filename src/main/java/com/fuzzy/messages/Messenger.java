@@ -1,4 +1,4 @@
-package com.mycompany.messages;
+package com.fuzzy.messages;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -9,12 +9,12 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonReader;
 
-public class Messager {
+public class Messenger {
 
     private String messagesFilePath;
     private JsonArray messages;
 
-    public Messager(String messagesFilePath) {
+    public Messenger(String messagesFilePath) {
         this.messagesFilePath = messagesFilePath;
         try {
             this.loadMessagesFromJSON();

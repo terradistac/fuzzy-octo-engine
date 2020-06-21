@@ -1,4 +1,4 @@
-package com.mycompany.module;
+package com.fuzzy.module;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
