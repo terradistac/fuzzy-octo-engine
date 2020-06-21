@@ -1,35 +1,42 @@
 package com.fuzzy.messages;
 
-import java.io.IOException;
 import java.io.StringReader;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javax.json.Json;
-import javax.json.JsonArray;
+import javax.json.JsonObject;
 import javax.json.JsonReader;
 
 public class Messenger {
 
     private String messagesFilePath;
-    private JsonArray messages;
+    private JsonObject messageJSON;
 
     public Messenger(String messagesFilePath) {
         this.messagesFilePath = messagesFilePath;
         try {
             this.loadMessagesFromJSON();
         } catch (Exception e) {
-            System.out.println("Problem parsing JSON file with message information");
+            System.out.println("Problem parsing JSON file with message information. " + e.getMessage());
         };
     }
 
     protected void loadMessagesFromJSON() throws Exception {
         try {
-        JsonReader parser = Json.createReader(new StringReader(Files.readString(FileSystems.getDefault().getPath(this.messagesFilePath))));
-        this.messages = parser.readArray();
-        } catch (IOException ie) {
-            throw new Exception (ie);
+        JsonReader parser = Json.createReader(new StringReader(Files.readString(Paths.get(this.messagesFilePath))));
+        this.messageJSON = parser.readObject();
+        } catch (Exception e) {
+            throw new Exception (e);
         }
     }
+
+    protected JsonObject getMessages() {
+        return this.messageJSON;
+    }
+
+	protected JsonObject getLocalizedMessages(String language) {
+		return getMessages().get(language).asJsonObject();
+	}
 
 }
