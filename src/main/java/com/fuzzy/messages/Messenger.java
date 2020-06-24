@@ -23,7 +23,19 @@ public class Messenger {
         } catch (Exception e) {
             System.out.println("Problem parsing JSON file with message information. " + e.getMessage());
         }
-        ;
+    }
+
+    public String getMessage(String messageType, String messageLabel) throws Exception {
+        String localizedMessage;
+        try {
+            localizedMessage = getLocalizedMessages(getSystemLanguage()).get(messageType).asJsonObject()
+                    .getString(messageLabel);
+            return localizedMessage;
+        } catch (Exception e) {
+            System.out.println("Problem retrieving localized message " + messageLabel + ". The error is: "
+                    + e.getCause().toString());
+            throw new Exception(e);
+        }
     }
 
     protected void loadMessagesFromJSON() throws Exception {
@@ -41,18 +53,6 @@ public class Messenger {
 
     protected JsonObject getLocalizedMessages(String language) {
         return getMessages().get(language).asJsonObject();
-    }
-
-    protected String getMessage(String messageType, String messageLabel) throws Exception {
-        String localizedMessage;
-        try {
-            localizedMessage = getLocalizedMessages(getSystemLanguage()).get(messageType).asJsonObject().getString(messageLabel);
-            return localizedMessage;
-        } catch (Exception e) {
-            System.out.println("Problem retrieving localized message " + messageLabel + ". The error is: "
-                    + e.getCause().toString());
-            throw new Exception(e);
-        }
     }
 
     protected String getSystemLanguage() throws Exception {
