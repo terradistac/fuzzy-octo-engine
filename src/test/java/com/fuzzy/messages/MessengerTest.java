@@ -7,11 +7,9 @@ import javax.json.JsonObject;
 
 import org.junit.jupiter.api.Test;
 
-public class MessengerTest {
+public class MessengerTest extends MessengerTestBase{
 
     private Messenger testMessenger;
-    private String testFilePath = "src\\test\\java\\com\\fuzzy\\messages\\MockGardeningMessages.json";
-    private String testSystemProperties = "src\\test\\java\\com\\fuzzy\\messages\\MockSystemProperties.json";
 
     @Test
     public void messengerSuccessfullyLoadsProvidedJSONData() {

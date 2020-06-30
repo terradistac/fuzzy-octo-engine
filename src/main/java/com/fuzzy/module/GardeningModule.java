@@ -7,13 +7,5 @@ public class GardeningModule implements Module {
         // TODO Auto-generated method stub
 
     }
-
-	protected String getGreeting() {
-		return null;
-    }
-    
-    protected void initialize() {
-
-    }
     
 }

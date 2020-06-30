@@ -71,4 +71,8 @@ public class Messenger {
         this.systemPropertiesFilePath = filePath;
     }
 
+    public String getSystemPropertiesFilePath() {
+        return this.systemPropertiesFilePath;
+    }
+
 }
