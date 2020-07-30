@@ -1,6 +1,8 @@
 package com.fuzzy.repository;
 
-import com.fuzzy.app.Plant;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +23,11 @@ public class PlantRepositoryTest {
     private PlantRepository plantRepository;
     
     @Test
-    public void givenStudent_whenSave_thenGetOk() {
-        Plant student = new Plant();
+    public void saveNewPlant_AndRetrieve() {
+        Plant plant = new Plant();
+        plant.setId(1);
+        plantRepository.save(plant);
+        Optional<Plant> retrievedPlant = plantRepository.findById(1l);
+        assertNotNull(retrievedPlant.get());
     }
 }
