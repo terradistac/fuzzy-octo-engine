@@ -8,6 +8,14 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Plant {
 
+    public Plant(){
+
+    }
+
+    public Plant (com.fuzzy.plantManagement.Plant plant) {
+        
+    }
+
     @Id
     private long id;
 
