@@ -11,8 +11,14 @@ public class PlantManagerImpl implements PlantManager{
     @Autowired
     public PlantRepository plantRepository;
 
+    @Override
     public void addPlantToCollection(Plant plant) {
         plantRepository.save(new com.fuzzy.repository.Plant(plant));
+    }
+
+    @Override
+    public void deletePlant(Plant plant) {
+        plantRepository.deleteById(1l);
     }
 
     public void setPlantRepository(PlantRepository plantRepository) {

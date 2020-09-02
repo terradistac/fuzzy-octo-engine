@@ -29,4 +29,16 @@ public class PlantManagerImplTest {
         plantManagerImpl.addPlantToCollection(plant);
         EasyMock.verify(mockPlantRepository);
     }
+
+    @Test
+    public void deletePlant_CallsRepositoryOnce() {
+        com.fuzzy.plantManagement.Plant plant = new com.fuzzy.plantManagement.Plant();
+
+        mockPlantRepository.deleteById(EasyMock.anyLong());
+        EasyMock.expectLastCall().once();
+        EasyMock.replay(mockPlantRepository);
+
+        plantManagerImpl.deletePlant(plant);
+        EasyMock.verify(mockPlantRepository);
+    }
 }
